@@ -1,0 +1,135 @@
+{{ define "main" }}
+<div class="container-fluid mt-4">
+<div class="row">
+<!-- For small screens -->
+  <div class="col-12 d-lg-none">
+    <div class="tags mb-3">
+      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Beatae nihil nesciunt blanditiis culpa, quod mollitia vel? Illo asperiores modi, similique non qui beatae dignissimos unde debitis explicabo quod sit dolores?
+    </div>
+    <div class="articles">
+      {{ range site.RegularPages }}
+        <div class="card mb-3">
+          <div class="card-body">
+            <h5 class="card-title">{{ .Title }}</h5>
+            <div class="card-text">
+              {{ range .Params.tags }}
+              <span class="badge bg-secondary">{{ . }}</span>
+              {{ end }}
+            </div>
+            <a href="{{ .RelPermalink }}" class="btn btn-primary">Read More</a>
+          </div>
+        </div>
+      {{ end }}
+    </div>
+  </div>
+
+  <!-- For large screens -->
+  <div class="col-lg-4 d-none d-lg-block">
+    <div class="pe-4">
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam fugit sapiente voluptate! Iusto eos distinctio accusantium voluptatibus dicta quibusdam mollitia maiores, consectetur at veniam doloribus quo, nisi animi? Nihil, minus!</p>
+
+        <ul class="list-group mt-3">
+          <div class="list-group-item list-group-item-light">Filtrar por Nivel: </div>
+            <li class="list-group-item d-flex justify-content-between align-items-center"><a href="/tags/1/" class="text-decoration-none">#1</a><span class="badge text-bg-secondary rounded-pill">7</span></li>
+            <li class="list-group-item d-flex justify-content-between align-items-center"><a href="/tags/2/" class="text-decoration-none">#2</a><span class="badge text-bg-secondary rounded-pill">9</span></li>
+            <li class="list-group-item d-flex justify-content-between align-items-center"><a href="/tags/3/" class="text-decoration-none">#3</a><span class="badge text-bg-secondary rounded-pill">12</span></li>
+            <li class="list-group-item d-flex justify-content-between align-items-center"><a href="/tags/4/" class="text-decoration-none">#4</a><span class="badge text-bg-secondary rounded-pill">10</span></li>
+            <li class="list-group-item d-flex justify-content-between align-items-center"><a href="/tags/5/" class="text-decoration-none">#5</a><span class="badge text-bg-secondary rounded-pill">5</span></li>
+        </ul>
+
+        <ul class="list-group mt-3">
+          <div class="list-group-item list-group-item-light">Filtrar por Estado: </div>
+            <li class="list-group-item"><a href="/tags/2/" class="text-decoration-none">#Puedo inscribirme</a></li>
+            <li class="list-group-item"><a href="/tags/3/" class="text-decoration-none">#Abandonada</a></li>
+            <li class="list-group-item"><a href="/tags/4/" class="text-decoration-none">#Cursando</a></li>
+            <li class="list-group-item"><a href="/tags/5/" class="text-decoration-none">#Aprobada</a></li>
+            <li class="list-group-item"><a href="/tags/5/" class="text-decoration-none">#Promocionada</a></li>
+        </ul>
+
+        <!-- agregar links, mejorar filtrado por tags ?? -->
+
+        <ul class="list-group mt-3">
+          <div class="list-group-item list-group-item-light">Filtrar por Área: </div>
+          <li class="list-group-item">#Matemática</li>
+          <li class="list-group-item">#Sistemas</li>
+          <li class="list-group-item">#Física</li>
+        </ul>
+
+        <ul class="list-group mt-3">
+          <div class="list-group-item list-group-item-light">Filtrar por Duración: </div>
+          <li class="list-group-item">#Anual</li>
+          <li class="list-group-item">#1C</li>
+          <li class="list-group-item">#2C</li>
+          <li class="list-group-item">#Libre</li>
+        </ul>
+
+
+    </div>
+    
+
+  </div>
+
+  <div class="col-lg-8 d-none d-lg-block">
+    <div class="articles">
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4" data-masonry='{"percentPosition": true }'>
+        {{ range site.RegularPages }}
+          <div class="col">
+            <div class="card">
+              {{ with .Params.nivel }}
+              <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-secondary-subtle text-dark">
+                {{ . }}
+                <span class="visually-hidden">Nivel</span>
+              </span>
+              {{ end }}
+            
+                <img src="{{ .RelPermalink }}featured.jpg" class="card-img-top" alt="{{ .Title }}">
+              <div class="card-body">
+              <h5 class="card-title">{{ .Title }}</h5>
+              <ul style="list-style-type: none; padding-left: 0;" class="mt-3">
+                {{ with .Params.area }}
+                <li class="card-text"><small class="text-body-secondary">Área: {{ . }}</small></li>
+                {{ end }}
+                {{ with .Params.requiere }}
+                <li class="card-text"><small class="text-body-secondary">Requiere: {{ . }}</small></li>
+                {{ end }}
+                {{ with .Params.habilita }}
+                <li class="card-text"><small class="text-body-secondary">Habilita: {{ . }}</small></li>
+                {{ end }}
+              </ul>
+              </div>
+              {{ .Content }}
+            
+              <!-- puede-inscribir, abandonado, cursando, aprobado-cursado, aprobado-directo -->
+              {{ if eq .Params.estado "puede-inscribir" }}
+              <div class="card-footer">
+                <small>Puede Inscribirse</small>
+              </div>
+              {{ else if eq .Params.estado "abandonado" }}
+              <div class="card-footer">
+                <small>Abandonada</small>
+              </div>
+              {{ else if eq .Params.estado "cursando" }}
+              <div class="card-footer bg-warning-subtle">
+                <small>Cursando</small>
+              </div>
+              {{ else if eq .Params.estado "aprobado-cursado" }}
+              <div class="card-footer">
+                <small>Cursado Aprobado</small>
+              </div>
+              {{ else if eq .Params.estado "aprobado-directo" }}
+              <div class="card-footer bg-success-subtle">
+                <small>Aprobación Directa</small>
+              </div>
+              {{ else }}
+              {{ end }}
+            </div>
+          </div>
+        {{ end }}
+      </div>
+    </div>
+  </div>
+
+  
+</div>
+</div>
+{{ end }}

@@ -1,0 +1,12 @@
+<div class="card mb-3">  <!-- mb-3 para un pequeño espacio vertical -->
+    {{ with .Params.images }}
+        {{ range first 1 . }}
+             <img src="{{ . | relURL }}" class="card-img-top" alt="{{ $.Title }}">
+        {{ end }}
+    {{ end }}
+    <div class="card-body">
+        <h5 class="card-title">{{ .Title }}</h5>
+        <p class="card-text">{{ .Summary }}</p>
+        <a href="{{ .RelPermalink }}" class="btn btn-primary">Leer más</a>
+    </div>
+</div>

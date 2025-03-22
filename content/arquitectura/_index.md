@@ -15,9 +15,9 @@ estado = 'cursando'
 {{< rawhtml >}}
 
     <ul class="list-group list-group-flush">
-        <li class="list-group-item">Cronograma</li>
+        <li class="list-group-item"><a href="{{< relref "cronograma" >}}" class="text-decoration-none text-dark">Cronograma</a></li>
         <li class="list-group-item">Programa Analítico</li>
-        <li class="list-group-item">Apuntes de Clase</li>
+        <li class="list-group-item"><a href="{{< relref "apuntes_clase" >}}" class="text-decoration-none text-dark">Apuntes de Clase</a></li>
         <li class="list-group-item">Material</li>
     </ul>
     <div class="card-body">

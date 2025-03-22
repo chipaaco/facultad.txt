@@ -1,13 +1,27 @@
-<div class="collapse" id="navbarToggleExternalContent" data-bs-theme="dark">
-    <div class="bg-dark p-4">
-      <h1 class="text-body-emphasis h4">Facultad.txt</h1>
-      <span class="text-body-secondary">La navidad es el checkpoint, ponete bien tryhard, aprovechá tu bala de plata y apuntá a lo que realmente vale.</span>
-    </div>
+<div class="show" id="navbarToggleExternalContent" data-bs-theme="dark">
+  <div class="bg-dark p-4">
+    <h1 class="text-body-emphasis h4">Facultad.txt</h1>
+    <span class="text-body-secondary">La navidad es el checkpoint, a ponerse bien tryhard y aprovechar las balas de plata.</span>
   </div>
-  <nav class="navbar navbar-dark bg-dark">
-    <div class="container-fluid">
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-    </div>
-  </nav>
+</div>
+<nav class="navbar navbar-dark bg-dark">
+  <div class="container-fluid">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="true" aria-label="Toggle navigation" onclick="toggleText()">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <span id="navbarText" class="text-white ms-2 d-none">Facultad.txt</span>
+    <a href="#" target="_blank" class="navbar-brand">
+      <i class="bi bi-github"></i>
+    </a>
+  </div>
+</nav>
+
+<script>
+  function toggleText() {
+    const navbarText = document.getElementById('navbarText');
+    const navbarToggle = document.getElementById('navbarToggleExternalContent');
+    if (navbarToggle.classList.contains('collapsing')) {
+      navbarText.classList.toggle('d-none');
+    }
+  }
+</script>

@@ -1,13 +1,11 @@
 +++
-title = 'Arquitectura de Computadoras'
-date = 2023-03-15T11:00:00-07:00
+title = 'Algorítmos y Estructuras de Datos'
 draft = false
-tags = ['2', 'cursando', '1C']
-nivel = "2"
-area = 'Arquitectura'
-duracion = '1C'
+tags = ['1', 'cursando', 'Anual']
+nivel = "1"
+duracion = 'Anual'
 requiere = ["Ninguna"]
-habilita = ["Sistemas Operativos", "Comunicación de Datos"]
+habilita = ["Análisis de Sistemas de Información", "Paradigmas de Programación", "Sintaxis y Semántica de los Lenguajes", "Bases de Datos", "Desarrollo de Software", "Diseño de Sistemas de Información"]
 estado = 'Cursando 2025'
 # puede-inscribir, abandonado, cursando, aprobado-cursado, aprobado-directo
 +++

@@ -1,13 +1,11 @@
 +++
-title = 'Arquitectura de Computadoras'
-date = 2023-03-15T11:00:00-07:00
+title = 'Sistemas y Procesos de Negocio'
 draft = false
-tags = ['2', 'cursando', '1C']
-nivel = "2"
-area = 'Arquitectura'
-duracion = '1C'
-requiere = ["Ninguna"]
-habilita = ["Sistemas Operativos", "Comunicación de Datos"]
+tags = ['1', 'cursando', 'anual']
+nivel = "1"
+duracion = 'Anual'
+requiere = ["Ingreso"]
+habilita = ["Análisis de Sistemas de Información", "Diseño de Sistemas de Información"]
 estado = 'Cursando 2025'
 # puede-inscribir, abandonado, cursando, aprobado-cursado, aprobado-directo
 +++

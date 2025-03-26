@@ -1,1 +1,12 @@
+/* Tufte CSS v1.8.0 | MIT License | https://edwardtufte.github.io/tufte-css/ */
 
+.sidenote {
+    float: right;
+    clear: right;
+    margin-right: -58%;
+    width: 50%;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 0.8rem;
+    line-height: 1.2;
+}

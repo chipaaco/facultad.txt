@@ -1,13 +1,11 @@
 +++
-title = 'Arquitectura de Computadoras'
-date = 2023-03-15T11:00:00-07:00
+title = 'Lógica y Estructuras Discretas'
 draft = false
-tags = ['2', 'cursando', '1C']
-nivel = "2"
-area = 'Arquitectura'
+tags = ['1', 'cursando', '1C']
+nivel = "1"
 duracion = '1C'
-requiere = ["Ninguna"]
-habilita = ["Sistemas Operativos", "Comunicación de Datos"]
+requiere = ["Ingreso"]
+habilita = ["Paradígmas de Programación", "Sintaxis y Semántica de los Lenguages", "Bases de Datos", "Desarrollo de Software" ]
 estado = 'Cursando 2025'
 # puede-inscribir, abandonado, cursando, aprobado-cursado, aprobado-directo
 +++

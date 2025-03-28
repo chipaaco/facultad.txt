@@ -15,7 +15,7 @@ estado = 'Cursando 2025'
     <ul class="list-group list-group-flush">
         <li class="list-group-item"><a href="{{< relref "cronograma" >}}" class="text-decoration-none text-dark">Cronograma</a></li>
         <li class="list-group-item">Programa Analítico</li>
-        <li class="list-group-item"><a href="#" class="text-decoration-none text-dark">Estudio Preliminar C.</a></li>
+        <li class="list-group-item"><a href="{{< relref "epc" >}}" class="text-decoration-none text-dark">Estudio Preliminar C.</a></li>
         <li class="list-group-item"><a href="{{< relref "apuntes_clase" >}}" class="text-decoration-none text-dark">Apuntes Teoría</a></li>
         <li class="list-group-item"><a href="#" class="text-decoration-none text-dark">Resumen C.</a></li>
         <li class="list-group-item"><a href="#" class="text-decoration-none text-dark">Práctica Gradual</a></li>

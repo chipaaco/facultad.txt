@@ -1,25 +1,38 @@
 {{ define "main" }}
 <div class="container-fluid mt-4">
-  <div class="row">
-    <div class="col-lg-12 mb-5">
-      <nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='%236c757d'/%3E%3C/svg%3E&#34;);" aria-label="breadcrumb">
-        <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="{{ .Site.BaseURL }}">{{ .Parent.Title }}</a></li>
-          <li class="breadcrumb-item active" aria-current="page">{{ .Title }}</li>
-        </ol>
-      </nav>
-    </div>
+  <!-- la vaina que muestra donde estas parado -->
+  {{ partial "cornell/breadcumb" . }}
+  <!-- agregar links a la derecha para #1, #2, #3 -->
+</div>
+
+<div class="container">
+  <div>
+    {{ range .Pages }}
+      {{ partial "cornell/content" . }}
+    {{ end }}
   </div>
-  <div class="row">
-    <div class="col-lg-3">
-          <p>TOC</p>
-          <a href="#">21-03-2023</a>
-    </div>
-    <div class="col-lg-5">
-      {{ .Content}}
-    </div>
-    <div class="col-lg-4">
-      <p>Asdfa:</p>
+  <div class="sticky-bottom py-2 px-5">
+    <div class="row">
+      <div class="col-lg-2"></div>
+      <div class="col-lg-8 accordion" id="accordionExample">
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingOne">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+              <i class="bi bi-list-nested pe-2"></i>Mapa de Contenidos
+            </button>
+          </h2>
+          <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+              <ul>
+                {{ range .Pages }}
+                  <li><a class="text-dark" href="#{{ .Date.Format "01-02-2006" }}">{{ .Date.Format "01-02-2006" }} - {{ .Title }}</a></li>
+                {{ end }}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4"></div>
     </div>
   </div>
 </div>
